@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&display=swap');
-
+@import url("https://cdn.jsdelivr.net/npm/octicons-css/octicons.min.css");
 
 :root{
   color-scheme: light dark;
@@ -29,7 +29,6 @@ ul{
 
 a:link, a:visited, a:active, a:hover{
   text-decoration: none;
-  color: blue;
 }
 
 #main-container{
@@ -47,6 +46,8 @@ a:link, a:visited, a:active, a:hover{
     "footer footer footer";
 }
 
+
+/* Side Menu */
 #sidemenu{
   grid-area: sidemenu;
   grid-template-columns: repeat(1, minmax(200px, 1fr));
@@ -59,6 +60,40 @@ a:link, a:visited, a:active, a:hover{
   grid-template-columns: repeat(1, minmax(200px, 1fr));
 }
 
+#side-title{
+  display: grid;
+  place-self: center;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(1, auto-fit);
+  font-size: 1.7rem;
+  padding-top: 10px;
+}
+
+#side-title > p {
+  padding-top: 5px;
+  font-family: "Inconsolata";
+  font-weight: 700;
+}
+
+
+.menu-items > ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto)); 
+  justify-items: center ;
+  align-items: center;
+}
+
+.menu-items > ul > li{
+  width: 65%;
+}
+
+.menu-item{
+  display: block;
+  color: white;
+  line-height: 2;
+}
+
+/* Top Menu */
 #topmenu{
   grid-area: topmenu;
   background-color: green;
@@ -67,6 +102,7 @@ a:link, a:visited, a:active, a:hover{
   grid-template-columns: 1fr;
 }
 
+/* Projects */
 #projects{
   grid-area: projects;
   background-color: rgb(28, 26, 23);
@@ -76,11 +112,13 @@ a:link, a:visited, a:active, a:hover{
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
+/* News */
 #news{
   grid-area: news;
   background-color: orange;
 }
 
+/* Footer */
 #footer{
   grid-area: footer;
   background-color: cadetblue;
@@ -88,4 +126,21 @@ a:link, a:visited, a:active, a:hover{
   display: grid;
   place-items: center;
   padding: 20px 0;
+}
+
+
+/* Utilities */
+
+.iconify{
+  color: burlywood;
+  /* height: 24px;
+  width: 24px; */
+  font-size: 1.5rem;
+  vertical-align: -0.35em !important;
+  margin-right: 8px;
+}
+
+.lg{
+  font-size: 2.5rem;
+  vertical-align: -1.50rem !important;
 }
