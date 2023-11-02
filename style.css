@@ -107,11 +107,6 @@ a:link, a:visited, a:active, a:hover{
   z-index: 5;
 }
 
-.shadow{
-  /* box-shadow: 0 2px 2px -2px white; */
-  /* box-shadow: 0 -2px 20px -3px white; */
-  /* margin: 10px; */
-}
 
 .top{
   display: grid;
@@ -124,7 +119,8 @@ a:link, a:visited, a:active, a:hover{
 .search{
   display: grid;
   justify-self: stretch;
-  grid-template-columns: 100px 1fr;
+  /* grid-template-columns: 100px 1fr; */
+  grid-template-columns: 100px minmax(200px, 1000px);
   justify-items: start;
   
 }

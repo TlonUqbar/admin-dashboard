@@ -20,6 +20,31 @@ function getRepos(dev){
     .then( () => createProjectContent() );
 }
 
+function getEvents(dev){
+  fetch(`https://api.github.com/users/${dev}/events?per_page=20`, {method: "GET"})
+    .then((response) => response.json())
+    .then((json) => { userEventsRaw = json;  console.log(json);  })
+    .then( () => (userEventsRaw.forEach(obj => userEventsResults.push(extract(obj, ...eventKeys)))) );
+  console.log("Events");
+}
+
+function getTrending(){
+  fetch(`https://api.gitterapp.com/repositories?since=daily`, {method: "GET"})
+    .then( (response) => response.json() )
+    .then( (json) => { trendingRepos = json; console.log(json) })
+    .then( () => {trendingRepos.forEach( obj => {trendyRepos.push(extract(obj, ...trendKeys))}) });
+    console.log("Trending Repos");
+}
+
+
+function getTrendingDevs(){
+  fetch(`https://api.gitterapp.com/developers?since=daily`, {method: "GET"})
+    .then( (response) => response.json() )
+    .then( (json) => { trendingDevs = json; console.log(json) })
+    .then( () => { trendingDevs.forEach( obj => {trendyDevs.push(extract(obj, ...devKeys))}) });
+    // .then( () => trends.forEach( obj => trendyRepos.push(extract(obj, ...trendKeys))) );
+    console.log("Trending Devs");
+}
 
 const extract = (obj, ...keys) => {
   const newObject = Object.assign({});
