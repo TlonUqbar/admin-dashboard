@@ -343,7 +343,20 @@ label > .iconify{
   line-height: .8;
 }
 
+.dev-username{
+  font-size: 1.7rem;
+  font-family: "Inconsolata";
+  font-weight: 700;
+}
 
+.dev-name{
+  font-family: "Inconsolata";
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-left:4px;
+  color: var(--t3);
+  line-height: .8;
+}
 
 /* Footer */
 #footer{
@@ -478,15 +491,13 @@ label > .iconify{
 
   .menu-items{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    padding-bottom: 20px; 
   }
 
   .menu-items > ul {
-    display: block;
-  }
-
-  #group-one, #group-two {
-    display: inline;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr)
   }
 
   #topmenu{
