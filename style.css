@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&display=swap');
+
+
+:root{
+  color-scheme: light dark;
+
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  min-height: 100dvh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+  background-color: black;
+}
+
+ul{
+  list-style: none;
+}
+
+a:link, a:visited, a:active, a:hover{
+  text-decoration: none;
+  color: blue;
+}
+
+#main-container{
+  display: grid;
+  grid-template-columns: auto 4fr minmax(280px, 350px);
+  grid-template-rows: auto 1fr 1fr; 
+  place-content: center;
+  grid-auto-rows: auto;
+  min-height: 100vh;
+
+  grid-template-areas: 
+    "sidemenu topmenu topmenu"
+    "sidemenu projects news"
+    "sidemenu projects news"
+    "footer footer footer";
+}
+
+#sidemenu{
+  grid-area: sidemenu;
+  grid-template-columns: repeat(1, minmax(200px, 1fr));
+  background-color: blue;
+}
+
+#topmenu{
+  grid-area: topmenu;
+  background-color: green;
+ 
+}
+
+#projects{
+  grid-area: projects;
+  background-color: rgb(28, 26, 23);
+}
+
+#news{
+  grid-area: news;
+  background-color: orange;
+}
+
+#footer{
+  grid-area: footer;
+  background-color: cadetblue;
+}
