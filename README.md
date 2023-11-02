@@ -17,14 +17,14 @@
 - [x] Remember that you can keep making grid containers within grid containers.
 - [x] In the sidebar, use more grids to lay out the navigation and branding sections.
 - [x] In the header, use more grids to lay out the search bar, user info and buttons.
-- [ ] For the main-content, use more grids to lay out the projects, announcements and trending items.
-- [ ] Fill out some dummy content and placeholder images so you can position all of your grid items.
+- [x] For the main-content, use more grids to lay out the projects, announcements and trending items.
+- [x] Fill out some dummy content and placeholder images so you can position all of your grid items.
 
 ## Step 4: Gather assets
-- [ ] Once you have your grid layout complete you can either recreate the dashboard example above or style your own design.
+- [x] Once you have your grid layout complete you can either recreate the dashboard example above or style your own design.
 - [ ] Check out some color palettes from Tailwind.
-- [ ] All of the icons and more can be downloaded as SVGs from Material Design Icons.
-- [ ] Choose your own fonts! The design example uses Roboto, which is available with Google fonts.
+- [x] All of the icons and more can be downloaded as SVGs from Material Design Icons.
+- [x] Choose your own fonts! The design example uses Roboto, which is available with Google fonts.
 
 ## Step 5: Some tips!
 - [ ] When building the layout, apply background colors or borders to your containers to help you visualize your grid.
