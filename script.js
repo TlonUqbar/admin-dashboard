@@ -1,49 +1,93 @@
 
 const projects = document.querySelector("#projects");
+const events = document.querySelector(".events");
+const repos = document.querySelector(".trending-repos");
+const devs = document.querySelector(".trending-devs");
 
 let userRaw = '';
 let userData = [];
 let userResults = [];
 let userKeys = ["name", "description", "homepage", "html_url", "language", "clone_url", "git_url", "created_at", "stargazers_count", "watchers_count", "forks_count"];
 
+let userEventsRaw = '';
+let userEventsResults = [];
+let eventKeys = ["type", "created_at", "actor", "repo", "payload"];
+
+let trendingRepos = '';
+let trendyRepos = [];
+let repoKeys = [ "author", "username", "avatar", "forks", "language", "name", "url", "stars", "description", "type"];
+
+let trendingDevs = '';
+let trendyDevs = [];
+let devKeys = ["name", "description", "url", "avatar", "username", "repo"];
+
+
+let octiconsSet = { "WatchEvent" : ["octicon-star-16", "watching repo"], 
+                    "PushEvent" : ["octicon-repo-push-16", "pushed to repo"], 
+                    "CreateEvent" : ["octicon-repo-16", "created"], 
+                    "ForkEvent" : ["octicon-repo-forked-16", "forked a repo"], 
+                    "PullRequestEvent" : ["octicon-git-pull-request-16", "pull-request"], 
+                    "PullRequestReviewEvent" : ["octicon-eye-16", "pull-request review"], 
+                    "PullRequestReviewCommentEvent" : ["octicon-comment-discussion-16", "pull-request comment"],
+                    "IssuesEvent" : ["octicon-issue-opened-16", "issue"],
+                    "IssueCommentEvent" : ["octicon-comment-16","issue comment"], 
+                    "DeleteEvent" : ["octicon-repo-deleted-16", "deleted"] 
+                  }
+
+let devName = ["TlonUqbar","Chalarangelo", "arvinxx", "wsxiaoys", "tmc", "SoftFever", 
+    "dgtlmoon", "leecalcote", "rtsisyk", "wader", "homanp", "ralexstokes",
+    "leerob", "stevearc", "jasnell", "justinmk", "SchrodingersGat", "stnguyen90",
+    "shahednasser", "KieronQuinn", "deadprogram", "Nutlope", "castrojo", 
+    "me-no-dev", "knadh", "donnemartin",
+    "AliSoftware", "JonnyBurger", "a8m", "azure-sdk",  "jonatanklosko", 
+    "OrKoN", "charliermarsh", "tklauser", "buger", "oobabooga", 
+    "ClearlyClaire", "pilcrowOnPaper", "sobolevn","evereq", "casey", 
+    "mazipan", "Vectorized","BloodAxe",
+    "Jason2866", "aras-p", "andyzhangx", "jacoblee93", "Ebazhanov", 
+    "emilk", "kelvins", "l-white", "eyurtsev", 
+    "guillaumekln", "zeux", "yairm210", "drwpow", "kripken", "TheOdinProject", "luismadrigal"]
+
 
 function getRepos(dev){
-
   fetch(`https://api.github.com/users/${dev}/repos`, {method: "GET", mode: 'cors', headers: [
-        ["Content-Type", "application/json"],
-        ["Content-Type", "text/plain"]
+        ["Content-Type", "application/json"], ["Content-Type", "text/plain"]
       ] })
     .then( (response) => response.json() )
-    .then( (json) => { userRaw = json;  console.log(userRaw);  })
+    .then( (json) => { userRaw = json;  /*console.log(userRaw); */  })
     .then( () => { userRaw.forEach(elem => userData.push(elem)) })
     .then( () => { userData.forEach(obj => userResults.push(extract(obj, ...userKeys)))})
     .then( () => createProjectContent() );
 }
 
 function getEvents(dev){
-  fetch(`https://api.github.com/users/${dev}/events?per_page=20`, {method: "GET"})
+  fetch(`https://api.github.com/users/${dev}/events?per_page=20`, {method: "GET", mode: 'cors', headers: [
+    ["Content-Type", "application/json"], ["Content-Type", "text/plain"]
+  ] })
     .then((response) => response.json())
-    .then((json) => { userEventsRaw = json;  console.log(json);  })
-    .then( () => (userEventsRaw.forEach(obj => userEventsResults.push(extract(obj, ...eventKeys)))) );
-  console.log("Events");
+    .then((json) => { userEventsRaw = json; })
+    .then( () => (userEventsRaw.forEach(obj => userEventsResults.push(extract(obj, ...eventKeys)))) )
+    .then( () => createEventsFeed());
 }
 
-function getTrending(){
-  fetch(`https://api.gitterapp.com/repositories?since=daily`, {method: "GET"})
+function getTrendingRepos(){
+  fetch(`https://api.gitterapp.com/repositories?since=daily`, {method: "GET", mode: 'cors', headers: [
+    ["Content-Type", "application/json"], ["Content-Type", "text/plain"]
+  ] })
     .then( (response) => response.json() )
-    .then( (json) => { trendingRepos = json; console.log(json) })
-    .then( () => {trendingRepos.forEach( obj => {trendyRepos.push(extract(obj, ...trendKeys))}) });
-    console.log("Trending Repos");
+    .then( (json) => { trendingRepos = json; })
+    .then( () => {trendingRepos.slice(0,5).forEach( obj => {trendyRepos.push(extract(obj, ...repoKeys))}) })
+    .then( () =>  createReposFeed() );
 }
 
 
 function getTrendingDevs(){
-  fetch(`https://api.gitterapp.com/developers?since=daily`, {method: "GET"})
+  fetch(`https://api.gitterapp.com/developers?since=daily`, {method: "GET", mode: 'cors', headers: [
+    ["Content-Type", "application/json"], ["Content-Type", "text/plain"]
+  ] })
     .then( (response) => response.json() )
-    .then( (json) => { trendingDevs = json; console.log(json) })
-    .then( () => { trendingDevs.forEach( obj => {trendyDevs.push(extract(obj, ...devKeys))}) });
-    // .then( () => trends.forEach( obj => trendyRepos.push(extract(obj, ...trendKeys))) );
-    console.log("Trending Devs");
+    .then( (json) => { trendingDevs = json; })
+    .then( () => { trendingDevs.slice(0,5).forEach( obj => {trendyDevs.push(extract(obj, ...devKeys))}) })
+    .then( () => createDevsFeed() );
 }
 
 const extract = (obj, ...keys) => {
@@ -175,4 +219,100 @@ const getDevIcon = (item) => {
   }
 };
 
-getRepos("tlonuqbar");
+
+function getOcticon(type){
+  return octiconsSet[type];
+}
+
+function createEventsFeed(){
+  userEventsResults.forEach( (item) => {
+    const list = document.createElement("li");
+    const icon = document.createElement("i");
+    const stamp = document.createElement("span");
+    const text = document.createElement("span");
+    
+    let type = item.type;
+    let date = item.created_at;
+    let ref_type = item.payload.ref_type;
+    let action = item.payload.action;
+
+    date = ` [${date.split("T")[0]}]`;
+    type = getOcticon(type);
+
+    icon.classList = [`octicons ${type[0]}`];
+    text.classList  = ["event-desc"];
+
+    if( !ref_type ) ref_type = ''
+    text.textContent = (!action) ? `${type[1]} ${ref_type} ` : `${action} ${type[1]} `;
+
+    stamp.classList = ['date'];
+    stamp.textContent = date;  
+    list.append(icon);
+    list.append(text);
+    list.append(stamp);
+    events.append(list);
+  })
+}
+
+getRepos(devName[0]);
+getEvents(devName[0]);
+getTrendingRepos();
+getTrendingDevs();
+
+
+function createReposFeed(){
+  trendyRepos.forEach( (item) => {
+    const avatar = document.createElement("div");
+    const img = document.createElement("img");
+    const name = document.createElement("div");
+    const author = document.createElement("div");
+    const url = document.createElement("a");
+    const repo = document.createElement("div");
+
+    img.classList = ["avatar-lg"];
+    img.src = `${item.avatar}`;
+    avatar.classList = ["repo-avatar"];
+    avatar.append(img);
+    url.setAttribute("target", "_blank");
+    url.textContent = `${item.name}`;
+    url.href = `${item.url}`;
+    author.classList = ["repo-author"];
+    author.textContent = `${item.author}`;
+    name.classList = ["repo-name"];
+    name.append(url);
+    name.append(author);
+    repo.append(avatar);
+    repo.append(name);
+    repo.classList = ["repo"];
+    repos.append(repo);
+  });
+}
+
+
+function createDevsFeed(){
+  trendyDevs.forEach( (item) => {
+    const avatar = document.createElement("div");
+    const img = document.createElement("img");
+    const name = document.createElement("div");
+    const username = document.createElement("div");
+    const url = document.createElement("a");
+    const dev = document.createElement("div");
+
+    img.classList = ["avatar-lg"];
+    img.src = `${item.avatar}`;
+    avatar.classList = ["repo-avatar"];
+    avatar.append(img);
+    url.setAttribute("target", "_blank");
+    url.textContent = `${item.name}`;
+    url.href = `${item.url}`;
+    username.classList = ["repo-author"];
+    username.textContent = `${item.username}`;
+    name.classList = ["repo-name"];
+    name.append(url);
+    name.append(username);
+    dev.append(avatar);
+    dev.append(name);
+    dev.classList = ["dev"];
+    devs.append(dev);
+  });
+}
