@@ -51,17 +51,29 @@ a:link, a:visited, a:active, a:hover{
   grid-area: sidemenu;
   grid-template-columns: repeat(1, minmax(200px, 1fr));
   background-color: blue;
+
+  display: grid;
+  grid: auto 1fr / 1fr;
+  place-items: start;
+  gap: 20px;
+  grid-template-columns: repeat(1, minmax(200px, 1fr));
 }
 
 #topmenu{
   grid-area: topmenu;
   background-color: green;
  
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 #projects{
   grid-area: projects;
   background-color: rgb(28, 26, 23);
+
+  display: grid;
+  grid: 50px auto / 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 #news{
@@ -72,4 +84,8 @@ a:link, a:visited, a:active, a:hover{
 #footer{
   grid-area: footer;
   background-color: cadetblue;
+
+  display: grid;
+  place-items: center;
+  padding: 20px 0;
 }
