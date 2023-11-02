@@ -5,7 +5,7 @@
 
 :root{
   color-scheme: light dark;
-
+  --t7: #0B0E14;
 }
 
 *{
@@ -20,7 +20,7 @@ html{
 }
 
 body{
-  background-color: black;
+  background-color: white;
 }
 
 ul{
@@ -51,7 +51,7 @@ a:link, a:visited, a:active, a:hover{
 #sidemenu{
   grid-area: sidemenu;
   grid-template-columns: repeat(1, minmax(200px, 1fr));
-  background-color: blue;
+  background-color: var(--t7);
 
   display: grid;
   grid: auto 1fr / 1fr;
@@ -96,10 +96,21 @@ a:link, a:visited, a:active, a:hover{
 /* Top Menu */
 #topmenu{
   grid-area: topmenu;
-  background-color: green;
- 
+  background-color: var(--t7);
+  /* background-color: white; */
   display: grid;
   grid-template-columns: 1fr;
+  /* box-shadow: 0px 10px 10px 10px white; */
+  /* box-shadow: 1px 1px 20px 30px black; */
+  /* padding:10px; */
+   box-shadow: 10px 0px 10px -3px white;
+  z-index: 5;
+}
+
+.shadow{
+  /* box-shadow: 0 2px 2px -2px white; */
+  /* box-shadow: 0 -2px 20px -3px white; */
+  /* margin: 10px; */
 }
 
 .top{
@@ -190,13 +201,16 @@ label > .iconify{
 #projects{
   grid-area: projects;
   background-color: rgb(28, 26, 23);
-
+  /* background-color: white; */
   display: grid;
   grid: 50px auto / 1fr 1fr 1fr;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 
   gap: 20px;
   padding: 0 20px 20px;
+  box-shadow: 2px -2px 8px -2px white; 
+              
+  z-index: 3;
 }
 
 .project-card{
@@ -238,6 +252,9 @@ label > .iconify{
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
   padding: 0 20px 0 10px;
+  /* box-shadow:  3px 0px 10px 1px white; */
+  box-shadow: 6px 1px 8px -4px white; 
+  z-index: 4;
 }
 
 #events > .section-title, 
@@ -331,11 +348,12 @@ label > .iconify{
 /* Footer */
 #footer{
   grid-area: footer;
-  /* background-color: cadetblue; */
+  background-color: var(--t7);
 
   display: grid;
   place-items: center;
   padding: 20px 0;
+  z-index: 1;
 }
 
 
