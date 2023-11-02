@@ -115,6 +115,7 @@ a:link, a:visited, a:active, a:hover{
   justify-self: stretch;
   grid-template-columns: 100px 1fr;
   justify-items: start;
+  
 }
 
 
@@ -158,7 +159,7 @@ label > .iconify{
 
 .bottom{
   display: grid;
-  grid-template-columns: 80px 1fr auto;
+  grid-template-columns: 120px 1fr auto;
   grid-template-rows: 80px;
   justify-items: space-around;
   align-items: center;
@@ -233,13 +234,104 @@ label > .iconify{
 /* News */
 #news{
   grid-area: news;
-  background-color: orange;
+  background-color: rgb(28, 26, 23);
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0 20px 0 10px;
 }
+
+#events > .section-title, 
+#trending-repos > .section-title, 
+#trending-devs > .section-title {
+  margin: 15px 0 25px 0;
+  padding: 0;
+}
+
+.events-box{
+  border-radius: 10px;
+  background-color: rgba(102,98,96, 1);
+  color: black;
+  padding:10px 0 20px 10px;
+  border-left: 10px solid rgb(26, 182, 8);
+}
+
+.user-activity{
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.event > ul > li {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.trends-heading{
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+#trending-repos{
+  padding: 10px 0;
+}
+
+#trending-devs{
+  padding-bottom: 20px;
+}
+
+.trends-card{
+  border-radius: 10px;
+  background-color: rgba(74,74,74, 1);
+  color: black;
+  padding:10px;
+  margin-right: 0px;
+  border-left: 10px solid rgb(180, 6, 6);
+}
+
+
+.repo, .dev{
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: 50px;
+  gap: 10px;
+  padding:10px 0 10px
+}
+
+.dev{
+  justify-items: left;
+}
+
+.repo-avatar, .dev-avatar{
+  align-self: center;
+  justify-self: center;
+}
+
+.repo-name{
+  font-size: 1.6rem;
+  font-family: "Inconsolata";
+  font-weight: 700;
+}
+
+.repo-author{
+  font-family: "Inconsolata";
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-left:4px;
+  color: var(--t3);
+  line-height: .8;
+}
+
+
 
 /* Footer */
 #footer{
   grid-area: footer;
-  background-color: cadetblue;
+  /* background-color: cadetblue; */
 
   display: grid;
   place-items: center;
@@ -256,12 +348,25 @@ label > .iconify{
   margin-right: 8px;
 }
 
+
+.octicons{
+  padding-right: 8px;
+  font-size: 1.1rem;
+}
+
+.devicon{
+  font-size: 2.2rem;
+}
+
 .lg{
   font-size: 2.5rem;
   vertical-align: -1.50rem !important;
 }
 
-.avatar, .avatar-md, .avatar-lg {
+.avatar, 
+.avatar-md, 
+.avatar-lg, 
+.avatar-xl {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -278,6 +383,12 @@ label > .iconify{
 .avatar-lg{
   width: 42px;
   height: 42px;
+  vertical-align: top;
+}
+
+.avatar-xl{
+  width: 64px;
+  height: 64px;
   vertical-align: top;
 }
 
@@ -305,4 +416,81 @@ label > .iconify{
   align-self: center;
   padding-top: 10px;
   padding-left: 10px;
+}
+
+.date{
+  font-size: 0.75rem;
+  color: var(--outline-color);
+  font-weight: 500;
+  font-family: "Roboto";
+}
+
+.even{
+  /* background-color: rgba(55,52,51, 1); */
+  border-bottom: 1px solid rgba(55,52,51, 1);;
+}
+
+
+.odd{
+  /* background-color: rgba(102,98,96, 1); */
+  border-bottom: 1px solid rgba(55,52,51, 1);
+}
+
+
+/* small screens  */
+@media (max-width:840px) {
+  #main-container{
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'sidemenu'
+      'topmenu'
+      'projects'
+      'news'
+      'footer';
+  }
+
+  #sidemenu{
+    justify-items: start;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+
+  .menu-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
+  }
+
+  .menu-items > ul {
+    display: block;
+  }
+
+  #group-one, #group-two {
+    display: inline;
+  }
+
+  #topmenu{
+    grid-template-rows: 60px 120px;
+  }
+
+  .top{
+    display: grid;
+    grid-auto-columns: auto auto;
+    grid-template-rows: auto;
+    justify-items: start;
+    align-items: center;
+  }
+  
+  .top-menu-buttons{
+    justify-content: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .bottom{
+    grid-template-rows: auto;
+  }
 }
