@@ -45,7 +45,7 @@ let devName = ["TlonUqbar","Chalarangelo", "arvinxx", "wsxiaoys", "tmc", "SoftFe
     "mazipan", "Vectorized","BloodAxe",
     "Jason2866", "aras-p", "andyzhangx", "jacoblee93", "Ebazhanov", 
     "emilk", "kelvins", "l-white", "eyurtsev", 
-    "guillaumekln", "zeux", "yairm210", "drwpow", "kripken", "TheOdinProject", "luismadrigal"]
+    "guillaumekln", "zeux", "yairm210", "drwpow", "kripken", "TheOdinProject", "luismadrigal", "carafelix"]
 
 
 function getRepos(dev){
@@ -136,13 +136,17 @@ function createProjectContent(){
     repo_icon.classList = ["iconify"];
     repo_icon.setAttribute("data-icon", "mdi-source-repository");
     live_icon.classList = ["iconify"];
-    live_icon.setAttribute("data-icon", "mdi-application-outline");
+    live_icon.setAttribute("data-icon", "mdi-web");
     repo.href = item.html_url;
     repo.setAttribute("target", "_blank");
+    repo.setAttribute('title', "Open Code Repo")
     repo.append(repo_icon);
-    live.href = item.homepage;
-    live.setAttribute("target", "_blank");
-    live.append(live_icon);
+    if( item.homepage ){
+      live.href = item.homepage;
+      live.setAttribute("target", "_blank");
+      repo.setAttribute('title', "Open Homepage")
+      live.append(live_icon);
+    }
     star.classList = ["iconify"];
     star.setAttribute("data-icon", "mdi-star-outline");
     star.insertAdjacentText("beforeend", "0");
