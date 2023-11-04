@@ -280,13 +280,14 @@
     --projects-shadow: rgba(255, 255, 255, 1);
 
     /* --project-card-bg-color: rgba(30, 54, 76, 1) ; */
-    --project-card-bg-color: rgba(48, 82, 112, 1);
+    /* --project-card-bg-color: rgba(48, 82, 112, 1); */
+    --project-card-bg-color: rgba(41, 59, 77, 1);
     --project-card-text-color: ;
-    --project-card-border: rgba(191, 214, 242, 1);
+    --project-card-border: rgba(157, 192, 230, 1);
     --project-card-shadow: ;
 
     --project-name-text: rgba(96, 157, 211, 1);
-    --project-desc-text: rgba(220,223,229, 1);
+    --project-desc-text: rgba(191, 214, 242, 1);
     --project-info-icons: rgba(243, 154, 52, 1); 
     --project-iconify: rgba(13,28,41, 1);
 
@@ -585,7 +586,7 @@ label > .iconify{
 }
 
 .project-description{
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding-bottom: 20px;
   line-height: 1.5;
   color: var(--project-desc-text);
