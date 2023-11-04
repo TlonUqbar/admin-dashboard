@@ -5,270 +5,102 @@
 
 :root {
     color-scheme: light dark;
-
-    --main-bg-color: rgba(255,255,255, 1);
-    --tint-bg-color: rgba(255,255,255, 1);
-    --tone-bg-color: rgba(235,241,249, 1);
-    --swap-bg-color: rgba(60,114,157, 1);
-    --special-bg-color: rgba(47,92,128, 1);
- 
-
-    --main-text-color: rgba(39,49,61, 1);
-    --tint-text-color: rgba(46,89,124, 1);
-    --tone-text-color: rgba(43,84,117, 1);
-    --swap-text-color: rgba(235,241,249, 1);
-    --special-text-color: rgba(255,255,255, 1);
-
-    
-    --main-text-soft-color: rgba(74,81,90, 1);
-    --tint-text-soft-color: rgba(56,107,148, 1);
-    --tone-text-soft-color: rgba(51,99,137, 1);
-    --swap-text-soft-color: rgba(235,241,249, 1);
-    --special-text-soft-color: rgba(255,255,255, 1);
-
-    
-    --main-text-strong-color: rgba(81,81,81, 1);
-    --tint-text-strong-color: rgba(46,89,124, 1);
-    --tone-text-strong-color: rgba(43,84,117, 1);
-    --swap-text-strong-color: rgba(255,255,255, 1);
-    --special-text-strong-color: rgba(255,255,255, 1);
-
-
-    --main-subtle-color: rgba(247,249,253, 1);
-    --tint-subtle-color: rgba(247,249,253, 1);
-    --tone-subtle-color: rgba(243,247,252, 1);
-    --swap-subtle-color: rgba(57,109,151, 1);
-    --special-subtle-color: rgba(45,87,122, 1);
-
-    
-    --main-border-color: rgba(126,159,195, 1);
-    --tint-border-color: rgba(165,198,235, 1);
-    --tone-border-color: rgba(149,188,229, 1);
-    --swap-border-color: rgba(121,154,189, 1);
-    --special-border-color: rgba(113,143,176, 1);
-
-
-    
-    --main-shadow-color: rgba(171,193,220, 1);
-    --tint-shadow-color: rgba(158,195,234, 1);
-    --tone-shadow-color: rgba(145,183,224, 1);
-    --swap-shadow-color: rgba(36,73,102, 1);
-    --special-shadow-color: rgba(24,51,73, 1);
-
-    
-    
-    --main-input-color: rgba(255,255,255, 1);
-    --tint-input-color: rgba(255,255,255, 1);
-    --tone-input-color: rgba(255,255,255, 1);
-    --swap-input-color: rgba(48,94,130, 1);
-    --special-input-color: rgba(36,73,102, 1);
-
-
-
-    --main-outline-color: rgba(126,179,230, 1);
-    --tint-outline-color: rgba(126,179,230, 1);
-    --tone-outline-color: rgba(112,173,228, 1);
-    --swap-outline-color: rgba(123,178,230, 1);
-    --special-outline-color: rgba(112,173,228, 1);
-
-
   
-    --main-mark-color: rgba(53,101,140, 0.08);
-    --tint-mark-color: rgba(46,89,124, 0.08);
-    --tone-mark-color: rgba(43,84,117, 0.08);
-    --swap-mark-color: rgba(255,255,255, 0.08);
-    --special-mark-color: rgba(255,255,255, 0.08);
+    --body-bg-color: rgba(224, 236, 251, 1);
+    --body-text-color: rgba(111, 65, 0, 1);
 
+    --side-bg-color: rgba(190, 217, 248, 1);
+    --side-text-color: rgba(251, 238, 231, 1);
+    --side-section-title: rgba(111, 65, 0, 1);
+    --side-menu-items-text: rgba(112, 66, 0, 1);
+    --side-menu-icons: rgba(0, 48, 75, 1);
 
+    --top-bg-color: rgba(149, 183, 219, 1);
+    --top-text-color: rgba(28,28,28, 1);
+    --top-shadow: rgba(0, 0, 0, 1);;
+
+    --input-bg-color: rgba(224, 236, 251, 1);
+    --input-border-color: rgba(0, 66, 101, 1);
+    --input-text-color: rgba(29, 46, 62, 1);
+    --input-focus-color: rgba(231, 146, 49, 1);
+
+    --projects-bg-color: rgba(224, 236, 251, 1);
+    --projects-text-color: ;
+    --projects-section-title: rgba(0, 66, 101, 1);
+    --projects-shadow: rgba(0, 0, 0, 1);
+
+    --project-card-bg-color: rgba(215, 213, 211, 1);
+    --project-card-text-color:rgba(62,62,62, 1);
+    --project-card-border: rgba(225, 142, 48, 1);
+    /* --project-card-shadow: rgba(0, 0, 0, 0.75); */
+    --project-card-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.75);
+
+    --project-name-text: rgba(39, 59, 79, 1);
+    --project-desc-text: rgba(22,33,44, 1);
+    --project-info-icons: ; 
+    --project-iconify: rgba(59, 88, 115, 1) ;
+
+    --news-bg-color: rgba(224, 236, 251, 1);
+    --events-section-title: rgba(0, 66, 101, 1);
+    --events-card-bg-color: rgba(255, 241, 233, 1);
+    --events-card-text-color: rgba(0, 48, 75, 1);
+    --events-card-border: rgba(107, 77, 55, 1);
+    --events-card-shadow:  0px 1px 8px -2px rgba(0, 0, 0, 0.75);
+    --event-desc-text: rgba(42, 64, 85, 1);
+
+    --trends-heading-text: rgba(0, 48, 75, 1);  
+    --trends-card-bg-color: rgba(251, 238, 231, 1);
+    --trends-card-text-color: ;
+    --trends-card-shadow: rgba(0, 0, 0, 0.75);
+    --trends-card-border: rgba(42, 64, 85, 1);
     
-    --main-special-color: rgba(53,101,140, 1);
-    --tint-special-color: rgba(46,89,124, 1);
-    --tone-special-color: rgba(43,84,117, 1);
-    --swap-special-color: rgba(255,255,255, 1);
-    --special-special-color: rgba(255,255,255, 1);
-   
-
+    --repo-name-link-text: rgba(0, 72, 110, 1);
+    --repo-author-text: rgba(46, 51, 57, 1);
+    --dev-name-text: ;
     
-    --main-special-bg-color: rgba(55,105,145, 1);
-    --tint-special-bg-color: rgba(55,105,145, 1);
-    --tone-special-bg-color: rgba(47,92,128, 1);
-    --swap-special-bg-color: rgba(235,241,249, 1);
-    --special-special-bg-color: rgba(255,255,255, 1);
-    
+    --footer-bg-color: rgba(233, 241, 252, 1);
+    --footer-text-color:rgba(28,28,28, 1); 
+    --footer-link-color: rgba(8, 69, 115, 1);
+    --footer-shadow: rgba(0, 0, 0, 1);
 
-    
-    --main-special-text-color: rgba(255,255,255, 1);
-    --tint-special-text-color: rgba(255,255,255, 1);
-    --tone-special-text-color: rgba(255,255,255, 1);
-    --swap-special-text-color: rgba(60,114,157, 1);
-    --special-special-text-color: rgba(47,92,128, 1); 
+    --iconify-text-color: rgba(0, 66, 101, 1);
+    --octicons-text-color: rgba(0, 48, 75, 1);
+    --devicions-text-color: ;
 
-    
-    --main-special-shadow-color: rgba(48,63,79, 1);
-    --tint-special-shadow-color: rgba(48,63,79, 1);
-    --tone-special-shadow-color: rgba(38,50,63, 1);
-    --swap-special-shadow-color: rgba(117,149,183, 1);
-    --special-special-shadow-color: rgba(126,159,195, 1);
+    --avatar-border: rgba(0,0,0, 0.2);
 
-    
-    --main-special-mark-color: rgba(255,255,255, 0.08);
-    --tint-special-mark-color: rgba(255,255,255, 0.08);
-    --tone-special-mark-color: rgba(255,255,255, 0.08);
-    --swap-special-mark-color: rgba(60,114,157, 0.08);
-    --special-special-mark-color: rgba(47,92,128, 0.08);
+    --button-bg-color: rgba(32, 51, 68, 1);
+    --button-text-color: rgba(255, 255, 255, 1);
+    --button-border: rgba(231, 146, 49, 1);
+    --button-hover-border: rgba(175, 110, 35, 1);
+    --button-hover-bg:rgba(243, 201, 175, 1);
+    --button-hover-text: rgba(64, 45, 30, 1);
 
+    --section-title-text: rgba(251, 238, 231, 1);
 
-    --main-light-color: rgba(238,244,252, 1);
-    --tint-light-color: rgba(238,244,252, 1);
-    --tone-light-color: rgba(238,244,252, 1);
-    --swap-light-color: rgba(238,244,252, 1);
-    --special-light-color: rgba(238,244,252, 1);
+    --date-text-color: rgba(64, 45, 30, 1);
 
-
-    --main-dark-color: rgba(55,72,90, 1);
-    --tint-dark-color: rgba(55,72,90, 1);
-    --tone-dark-color: rgba(55,72,90, 1);
-    --swap-dark-color: rgba(55,72,90, 1);
-    --special-dark-color: rgba(55,72,90, 1);
-
-
-
-
-
-
-
-
+    --even-bg-color: ;
+    --odd-bg-color: ;
 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-
-    --main-bg-color: rgba(32,32,32, 1);
-    --tint-bg-color: rgba(32,32,32, 1);
-    --tone-bg-color: rgba(30,39,49, 1);
-    --swap-bg-color: rgba(88,146,196, 1);
-    --special-bg-color: rgba(42,73,100, 1);
-
-    --main-text-color: rgba(220,223,229, 1);
-    --tint-text-color: rgba(126,179,230, 1);
-    --tone-text-color: rgba(131,181,231, 1);
-    --swap-text-color: rgba(30,39,49, 1);
-    --special-text-color: rgba(220,223,229, 1);
- 
-    --main-text-soft-color: rgba(172,177,184, 1);
-    --tint-text-soft-color: rgba(96,157,211, 1);
-    --tone-text-soft-color: rgba(100,164,219, 1);
-    --swap-text-soft-color: rgba(30,39,49, 1);
-    --special-text-soft-color: rgba(220,223,229, 1);
-
-    --main-text-strong-color: rgba(177,177,177, 1);
-    --tint-text-strong-color: rgba(126,179,230, 1);        
-    --tone-text-strong-color: rgba(131,181,231, 1);
-    --swap-text-strong-color: rgba(32,32,32, 1);
-    --special-text-strong-color: rgba(220,223,229, 1);
-
-    --main-subtle-color: rgba(33,37,42, 1);
-    --tint-subtle-color: rgba(33,37,42, 1);
-    --tone-subtle-color: rgba(26,35,44, 1);
-    --swap-subtle-color: rgba(92,151,203, 1);
-    --special-subtle-color: rgba(39,68,94, 1);
-
-    --main-border-color: rgba(82,102,123, 1);
-    --tint-border-color: rgba(59,77,95, 1);
-    --tone-border-color: rgba(63,82,102, 1);
-    --swap-border-color: rgba(83,107,131, 1);
-    --special-border-color: rgba(94,120,148, 1);
-
-    --main-shadow-color: rgba(0,0,0, 1);
-    --tint-shadow-color: rgba(0,0,0, 1);        
-    --tone-shadow-color: rgba(0,0,0, 1);
-    --swap-shadow-color: rgba(60,101,137, 1);
-    --special-shadow-color: rgba(13,28,41, 1);
-
-    --main-input-color: rgba(28,28,28, 1);
-    --tint-input-color: rgba(28,28,28, 1);
-    --tone-input-color: rgba(32,32,32, 1);
-    --swap-input-color: rgba(99,162,217, 1);
-    --special-input-color: rgba(30,55,76, 1);
-
-    --main-outline-color: rgba(90,148,198, 1);
-    --tint-outline-color: rgba(90,148,198, 1);
-    --tone-outline-color: rgba(90,148,198, 1);
-    --swap-outline-color: rgba(65,110,148, 1);
-    --special-outline-color: rgba(90,148,198, 1);
-
-    --main-mark-color: rgba(126,179,230, 0.08);
-    --tint-mark-color: rgba(126,179,230, 0.08);        
-    --tone-mark-color: rgba(131,181,231, 0.08);
-    --swap-mark-color: rgba(32,32,32, 0.08);
-    --special-mark-color: rgba(220,223,229, 0.08);
-
-    --main-special-color: rgba(126,179,230, 1);
-    --tint-special-color: rgba(126,179,230, 1);
-    --tone-special-color: rgba(131,181,231, 1);
-    --swap-special-color: rgba(32,32,32, 1);
-    --special-special-color: rgba(220,223,229, 1);
-
-    --main-special-bg-color: rgba(42,73,100, 1);
-    --tint-special-bg-color: rgba(42,73,100, 1);
-    --tone-special-bg-color: rgba(42,73,100, 1);
-    --swap-special-bg-color: rgba(44,57,70, 1);
-    --special-special-bg-color: rgba(220,223,229, 1);
-
-    --main-special-text-color: rgba(220,223,229, 1);
-    --tint-special-text-color: rgba(220,223,229, 1);     
-    --tone-special-text-color: rgba(220,223,229, 1);
-    --swap-special-text-color: rgba(101,166,222, 1);
-    --special-special-text-color: rgba(42,73,100, 1);
-
-    --main-special-shadow-color: rgba(0,0,0, 1);
-    --tint-special-shadow-color: rgba(0,0,0, 1);
-    --tone-special-shadow-color: rgba(0,0,0, 1);        
-    --swap-special-shadow-color: rgba(0,0,0, 1);
-    --special-special-shadow-color: rgba(84,108,133, 1);
-
-    --main-special-mark-color: rgba(220,223,229, 0.08);
-    --tint-special-mark-color: rgba(220,223,229, 0.08);
-    --tone-special-mark-color: rgba(220,223,229, 0.08);
-    --swap-special-mark-color: rgba(101,166,222, 0.08);
-    --special-special-mark-color: rgba(42,73,100, 0.08);
-
-    --main-light-color: rgba(191,214,242, 1);
-    --tint-light-color: rgba(191,214,242, 1);
-    --tone-light-color: rgba(191,214,242, 1);
-    --swap-light-color: rgba(191,214,242, 1);
-    --special-light-color: rgba(191,214,242, 1);
-
-    --main-dark-color: rgba(39,54,69, 1);
-    --tint-dark-color: rgba(39,54,69, 1);
-    --tone-dark-color: rgba(39,54,69, 1);   
-    --swap-dark-color: rgba(39,54,69, 1);
-    --special-dark-color: rgba(39,54,69, 1);    
-
-    --outline-color: rgba(221,138,96, 1);
-
-    /*--- ===  *****  === ---*/
-
+  
     --body-bg-color: rgba(42, 44, 46, 1);
     --body-text-color: rgba(220,223,229, 1);
 
-    /* --side-bg-color: rgba(159, 195, 235, 1); */
-    /* --side-bg-color: rgba(83, 136, 183, 1); */
-    /* --side-bg-color: rgba(65, 109, 147, 1); */
     --side-bg-color: rgba(17, 69, 103, 1);
     --side-text-color: ;
     --side-section-title: ;
     --side-menu-items-text: rgba(220,223,229, 1);
-    /* --side-menu-icons: rgba(250, 175, 111, 1); */
     --side-menu-icons: rgba(216, 142, 69, 1);
-
 
     --top-bg-color: rgba(39, 67, 93, 1);
     --top-text-color: ;
     --top-shadow: rgba(255,255, 255, 1);
 
-    /* --input-bg-color:  rgba(30, 54, 76, 1); */
     --input-bg-color: rgba(17, 69, 103, 1);
     --input-border-color: rgba(90, 148, 198, 1);
     --input-text-color: rgba(191, 214, 242, 1);
@@ -279,38 +111,32 @@
     --projects-section-title: rgba(157, 192, 230, 1);
     --projects-shadow: rgba(255, 255, 255, 1);
 
-    /* --project-card-bg-color: rgba(30, 54, 76, 1) ; */
-    /* --project-card-bg-color: rgba(48, 82, 112, 1); */
     --project-card-bg-color: rgba(41, 59, 77, 1);
     --project-card-text-color: ;
     --project-card-border: rgba(157, 192, 230, 1);
-    --project-card-shadow: ;
+    --project-card-shadow: none;
 
     --project-name-text: rgba(96, 157, 211, 1);
     --project-desc-text: rgba(191, 214, 242, 1);
     --project-info-icons: rgba(243, 154, 52, 1); 
-    --project-iconify: rgba(13,28,41, 1);
+    --project-iconify: rgba(34, 116, 169, 1);
 
     --news-bg-color: rgba(33, 43, 54, 1);
     --events-section-title: rgba(157, 192, 230, 1);
-    --events-card-bg-color: rgba(65, 115, 155, 1);
-    --events-card-text-color: rgba(0, 10, 50, 1) ;
+    --events-card-bg-color: rgba(33, 82, 113, 1);
+    --events-card-text-color: rgba(235,241,249, 1) ;
     --events-card-border: rgba(92, 151, 203, 1);
-    --event-desc-text: rgba(197, 217, 243, 1);
-    /* --event-desc-text: rgba(28, 99, 144, 1) */
+    --events-card-shadow: none;
+    --event-desc-text: rgba(218, 224, 231, 1);
 
     --trends-heading-text: rgba(0, 10, 50, 1) ;  
-    /* --trends-heading-text: rgba(243, 154, 52, 1); */
-
-    /* --trends-card-bg-color: rgba(197, 217, 243, 1); */
-    /* --trends-card-bg-color: rgba(87, 108, 131, 1); */
-    --trends-card-bg-color: rgba(78, 109, 139, 1);
-    --trends-card-text-color: rgba(197, 217, 243, 1);
-    /* --trends-card-border: rgba(172,177,184, 1); */
+    --trends-card-bg-color: rgba(139, 149, 163, 1);
+    --trends-card-text-color: rgba(235,241,249, 1);
+    --trends-card-shadow: none;
     --trends-card-border: rgba(28, 99, 144, 1);
     
-    --repo-name-link-text: rgba(13,28,41, 1);
-    --repo-author-text: rgba(220,223,229, 1);
+    --repo-name-link-text: rgba(9, 70, 118, 1);
+    --repo-author-text: rgba(29, 44, 58, 1);
     --dev-name-text: rgba(126,179,230, 1);
     
     --footer-bg-color: rgba(30,39,49, 1);
@@ -319,7 +145,7 @@
     --footer-shadow: rgba(255, 255, 255, 1);
 
     --iconify-text-color: rgba(243, 154, 52, 1);
-    --octicons-text-color: ;
+    --octicons-text-color: rgba(251, 185, 135, 1);
     --devicions-text-color: ;
 
     --avatar-border: rgba(0,0,0, 0.2);
@@ -337,8 +163,6 @@
 
     --even-bg-color: ;
     --odd-bg-color: ;
-
-
   }
 }
 
@@ -368,7 +192,7 @@ a:link, a:visited, a:active, a:hover{
 
 #main-container{
   display: grid;
-  grid-template-columns: auto 4fr minmax(280px, 350px);
+  grid-template-columns: auto 4fr minmax(280px, 380px);
   grid-template-rows: auto 1fr 1fr; 
   place-content: center;
   grid-auto-rows: auto;
@@ -438,6 +262,7 @@ a:link, a:visited, a:active, a:hover{
 #topmenu{
   grid-area: topmenu;
   background-color: var(--top-bg-color);
+  color: var(--top-text-color);
   display: grid;
   grid-template-columns: 1fr;
   box-shadow: 0px 1px 4px -3px var(--top-shadow);
@@ -456,23 +281,20 @@ a:link, a:visited, a:active, a:hover{
 .search{
   display: grid;
   justify-self: stretch;
-  /* grid-template-columns: 100px 1fr; */
   grid-template-columns: 100px minmax(200px, 1000px);
   justify-items: start;
-  
 }
-
 
 input  {
   width: 75%;
   border-radius: 20px;
-  /* background-color: var(--main-text-strong-color); */
   background-color: var(--input-bg-color);
   color: var(--input-text-color);
   font-size: 1.2rem;
   outline: none;
   border-color: var(--input-border-color);
 }
+
 input:focus{
   border-color: var(--input-focus-color);
 }
@@ -492,7 +314,7 @@ label > .iconify{
 
 .notifications{
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: auto auto 1fr;
   justify-items: center;
   align-items: center;
 }
@@ -533,7 +355,6 @@ label > .iconify{
   padding-bottom: 10px;
 }
 
-
 .top-menu-buttons{
   padding-right: 30px;
   align-self: center;
@@ -549,7 +370,7 @@ label > .iconify{
   gap: 20px;
   padding: 0 20px 20px;
   z-index: 3;
-  box-shadow: 1px 0px 5px -1px var(--projects-shadow);
+  box-shadow: 1px 1px 5px -1px var(--projects-shadow);
 }
 
 #projects .section-title{
@@ -559,17 +380,12 @@ label > .iconify{
 
 .project-card{
   display: grid;
-
   border-radius: 10px;
-  /* background-color: #3f4147; */
-  /* background-color: var(--subtle-card-bg); */
-  /* background-color: var(--tone-border-color); */
   background-color: var(--project-card-bg-color);
   border-left: 10px solid var(--project-card-border);
-  /* color: burlywood; */
   color: var(--project-card-text-color);
   padding: 10px;
-  /* box-shadow: -1px 1px 8px 1px rgba(144,138,136, 0.8); */
+  box-shadow: var(--project-card-shadow);
 }
 
 .project-title{
@@ -605,14 +421,10 @@ label > .iconify{
 /* News */
 #news{
   grid-area: news;
-  /* background-color: rgb(28, 26, 23); */
-  /* background-color: var(--special-special-shadow-color); */
   background-color: var(--news-bg-color);
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
   padding: 0 20px 0 10px;
-  /* box-shadow:  3px 0px 10px 1px white; */
-  /* box-shadow: 6px 1px 8px -4px white;  */
   z-index: 4;
 }
 
@@ -627,17 +439,11 @@ label > .iconify{
 
 .events-card{
   border-radius: 10px;
-  /* background-color: rgba(102,98,96, 1); */
-  /* background-color: var(--tone-subtle-color); */
-  /* background-color: var(--swap-subtle-color); */
   background-color: var(--events-card-bg-color);
-  /* background-color: var(--tone-border-color); */
-  /* color: black; */
   color: var(--events-card-text-color);
   padding:10px 0 20px 10px;
-  /* border-left: 10px solid var(--tone-text-soft-color); */
   border-left: 10px solid var(--events-card-border);
-  /* border-left: 10px solid rgba(220,223,229, 1); */
+  box-shadow: var(--events-card-shadow);
 }
 
 .user-activity{
@@ -677,25 +483,19 @@ label > .iconify{
 
 .trends-card{
   border-radius: 10px;
-  /* background-color: rgba(74,74,74, 1); */
-  /* background-color: var(--special-special-bg-color); */
   background-color: var(--trends-card-bg-color);
-  /* background-color: rgba(171,193,220, 1); */
   color: var(--trends-card-text-color);
   padding:10px;
   margin-right: 0px;
-  /* border-left: 10px solid rgb(180, 6, 6); */
-  /* border-left: 10px solid var(--swap-special-bg-color); */
-  /* border-left: 10px solid rgba(126,179,230, 1); */
   border-left: 10px solid var(--trends-card-border);
-  
+  box-shadow: 0px 1px 8px -2px var(--trends-card-shadow);
 }
 
 
 .repo, .dev{
   display: grid;
   grid-template-columns: 60px 1fr;
-  grid-template-rows: 50px;
+  grid-template-rows: auto;
   gap: 10px;
   padding:10px 0 10px;
   border-bottom: 1px solid rgba(55,52,51, 1);
@@ -757,6 +557,7 @@ label > .iconify{
   place-items: center;
   padding: 20px 0;
   z-index: 6;
+  color: var(--footer-text-color);
 }
 
 #footer a:link,
@@ -785,6 +586,10 @@ label > .iconify{
 
 .devicon{
   font-size: 2.2rem;
+}
+
+.theme{
+  cursor: pointer;
 }
 
 .lg{
@@ -822,15 +627,11 @@ label > .iconify{
 }
 
 .button{
-  /* background-color: rgba(102, 98, 96, 1); */
   background-color: var(--button-bg-color);
   border-radius: 6px;
   padding: 4px 10px;
-  /* margin: 0 10px ; */
-  /* color: white; */
   color: var(--button-text-color);
   border: 1px solid var(--button-border);
-  /* box-shadow: 1px 1px 10px 4px rgba(224,223,222, 0.28); */
   margin: 0 5px;
 }
 
@@ -843,7 +644,6 @@ label > .iconify{
 .section-title{
   grid-column: 1/-1;
   font-size: 1.5rem;
-  /* color: #c5bc0e; */
   color: var(--section-title-text);
   align-self: center;
   padding-top: 10px;
@@ -852,7 +652,6 @@ label > .iconify{
 
 .date{
   font-size: 0.75rem;
-  /* color: rgba(221,138,96, 1); */
   color: var(--date-text-color);
   font-weight: 400;
   font-family: "Roboto";

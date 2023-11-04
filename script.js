@@ -3,20 +3,20 @@ const projects = document.querySelector("#projects");
 const events = document.querySelector(".events");
 const repos = document.querySelector(".trending-repos");
 const devs = document.querySelector(".trending-devs");
+const dark = document.querySelector("#switcher");
+const useDark = window.matchMedia("(prefers-color-scheme: dark)");
 
+let theme = (window.matchMedia("(prefers-color-scheme: dark)").matches ) ? "dark" : "light" ;
 let userRaw = '';
 let userData = [];
 let userResults = [];
 let userKeys = ["name", "description", "homepage", "html_url", "language", "clone_url", "git_url", "created_at", "stargazers_count", "watchers_count", "forks_count"];
-
 let userEventsRaw = '';
 let userEventsResults = [];
 let eventKeys = ["type", "created_at", "actor", "repo", "payload"];
-
 let trendingRepos = '';
 let trendyRepos = [];
 let repoKeys = [ "author", "username", "avatar", "forks", "language", "name", "url", "stars", "description", "type"];
-
 let trendingDevs = '';
 let trendyDevs = [];
 let devKeys = ["name", "description", "url", "avatar", "username", "repo"];
@@ -53,7 +53,7 @@ function getRepos(dev){
         ["Content-Type", "application/json"], ["Content-Type", "text/plain"]
       ] })
     .then( (response) => response.json() )
-    .then( (json) => { userRaw = json;  /*console.log(userRaw); */  })
+    .then( (json) => { userRaw = json; })
     .then( () => { userRaw.forEach(elem => userData.push(elem)) })
     .then( () => { userData.forEach(obj => userResults.push(extract(obj, ...userKeys)))})
     .then( () => createProjectContent() );
@@ -258,11 +258,6 @@ function createEventsFeed(){
   })
 }
 
-getRepos(devName[0]);
-getEvents(devName[0]);
-getTrendingRepos();
-getTrendingDevs();
-
 
 function createReposFeed(){
   trendyRepos.forEach( (item) => {
@@ -320,3 +315,50 @@ function createDevsFeed(){
     devs.append(dev);
   });
 }
+
+getRepos(devName[0]);
+getEvents(devName[0]);
+getTrendingRepos();
+getTrendingDevs();
+
+
+function applyPreferredColorScheme(scheme) {
+  for (var s = 0; s < document.styleSheets.length; s++) {
+
+    for (var i = 0; i < document.styleSheets[s].cssRules.length; i++) {
+      rule = document.styleSheets[s].cssRules[i];
+
+      if (rule && rule.media && rule.media.mediaText.includes("prefers-color-scheme")) {
+        switch (scheme) {
+          case "light":
+            rule.media.appendMedium("original-prefers-color-scheme");
+            if (rule.media.mediaText.includes("light")) rule.media.deleteMedium("(prefers-color-scheme: light)");
+            if (rule.media.mediaText.includes("dark")) rule.media.deleteMedium("(prefers-color-scheme: dark)");
+            theme = "light";
+            break;
+          case "dark":
+            rule.media.appendMedium("(prefers-color-scheme: light)");
+            rule.media.appendMedium("(prefers-color-scheme: dark)");
+            if (rule.media.mediaText.includes("original")) rule.media.deleteMedium("original-prefers-color-scheme");
+            theme = "dark";
+            break;
+          default:
+            rule.media.appendMedium("(prefers-color-scheme: dark)");
+            if (rule.media.mediaText.includes("light")) rule.media.deleteMedium("(prefers-color-scheme: light)");
+            if (rule.media.mediaText.includes("original")) rule.media.deleteMedium("original-prefers-color-scheme");
+            break;
+        }
+      }
+    }
+  }
+}
+
+const toggleTheme = () => {
+  if(theme == "dark"){
+    applyPreferredColorScheme("light");
+  } else {
+    applyPreferredColorScheme("dark");
+  }
+}
+
+dark.addEventListener( "click", toggleTheme);
