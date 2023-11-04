@@ -254,18 +254,22 @@
     --body-text-color: rgba(220,223,229, 1);
 
     /* --side-bg-color: rgba(159, 195, 235, 1); */
-    --side-bg-color: rgba(83, 136, 183, 1);
+    /* --side-bg-color: rgba(83, 136, 183, 1); */
+    /* --side-bg-color: rgba(65, 109, 147, 1); */
+    --side-bg-color: rgba(17, 69, 103, 1);
     --side-text-color: ;
     --side-section-title: ;
     --side-menu-items-text: rgba(220,223,229, 1);
-    --side-menu-icons: rgba(16, 22, 29, 1);
+    /* --side-menu-icons: rgba(250, 175, 111, 1); */
+    --side-menu-icons: rgba(216, 142, 69, 1);
 
 
     --top-bg-color: rgba(39, 67, 93, 1);
     --top-text-color: ;
     --top-shadow: rgba(255,255, 255, 1);
 
-    --input-bg-color:  rgba(30, 54, 76, 1);
+    /* --input-bg-color:  rgba(30, 54, 76, 1); */
+    --input-bg-color: rgba(17, 69, 103, 1);
     --input-border-color: rgba(90, 148, 198, 1);
     --input-text-color: rgba(191, 214, 242, 1);
     --input-focus-color: ;
@@ -273,6 +277,7 @@
     --projects-bg-color: rgba(33, 43, 54, 1);
     --projects-text-color: ;
     --projects-section-title: rgba(157, 192, 230, 1);
+    --projects-shadow: rgba(255, 255, 255, 1);
 
     /* --project-card-bg-color: rgba(30, 54, 76, 1) ; */
     --project-card-bg-color: rgba(48, 82, 112, 1);
@@ -282,23 +287,26 @@
 
     --project-name-text: rgba(96, 157, 211, 1);
     --project-desc-text: rgba(220,223,229, 1);
-    --project-info-icons: rgba(13,28,41, 1); 
+    --project-info-icons: rgba(243, 154, 52, 1); 
     --project-iconify: rgba(13,28,41, 1);
 
     --news-bg-color: rgba(33, 43, 54, 1);
     --events-section-title: rgba(157, 192, 230, 1);
     --events-card-bg-color: rgba(65, 115, 155, 1);
-    --events-card-text-color: rgba(26, 35, 44, 1);
+    --events-card-text-color: rgba(0, 10, 50, 1) ;
     --events-card-border: rgba(92, 151, 203, 1);
     --event-desc-text: rgba(197, 217, 243, 1);
+    /* --event-desc-text: rgba(28, 99, 144, 1) */
 
-    /* --trends-heading-text: rgba(16, 22, 29, 1) ; */
-    --trends-heading-text: rgba(235,241,249, 1);
+    --trends-heading-text: rgba(0, 10, 50, 1) ;  
+    /* --trends-heading-text: rgba(243, 154, 52, 1); */
 
     /* --trends-card-bg-color: rgba(197, 217, 243, 1); */
-    --trends-card-bg-color: rgba(87, 108, 131, 1);
+    /* --trends-card-bg-color: rgba(87, 108, 131, 1); */
+    --trends-card-bg-color: rgba(78, 109, 139, 1);
     --trends-card-text-color: rgba(197, 217, 243, 1);
-    --trends-card-border: rgba(172,177,184, 1);
+    /* --trends-card-border: rgba(172,177,184, 1); */
+    --trends-card-border: rgba(28, 99, 144, 1);
     
     --repo-name-link-text: rgba(13,28,41, 1);
     --repo-author-text: rgba(220,223,229, 1);
@@ -309,22 +317,22 @@
     --footer-link-color: ;
     --footer-shadow: rgba(255, 255, 255, 1);
 
-    --iconify-text-color: rgba(13,28,41, 1);
+    --iconify-text-color: rgba(243, 154, 52, 1);
     --octicons-text-color: ;
     --devicions-text-color: ;
 
     --avatar-border: rgba(0,0,0, 0.2);
 
-    --button-bg-color: ;
-    --button-text-color: ;
+    --button-bg-color: rgba(140, 87, 26, 1);
+    --button-text-color: rgba(211, 192, 175, 1);
     --button-border: ;
     --button-hover-border: ;
-    --button-hover-bg: ;
+    --button-hover-bg: rgba(17, 69, 103, 1);
     --button-hover-text: ;
 
     --section-title-text: rgba(157, 192, 230, 1);
 
-    --date-text-color: rrgba(126, 179, 230, 1);
+    --date-text-color: rgba(252, 202, 169, 1);
 
     --even-bg-color: ;
     --odd-bg-color: ;
@@ -540,6 +548,7 @@ label > .iconify{
   gap: 20px;
   padding: 0 20px 20px;
   z-index: 3;
+  box-shadow: 1px 0px 5px -1px var(--projects-shadow);
 }
 
 #projects .section-title{
