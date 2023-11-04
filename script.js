@@ -5,6 +5,7 @@ const repos = document.querySelector(".trending-repos");
 const devs = document.querySelector(".trending-devs");
 const dark = document.querySelector("#switcher");
 const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+const section = document.querySelector("#p");
 
 let theme = (window.matchMedia("(prefers-color-scheme: dark)").matches ) ? "dark" : "light" ;
 let userRaw = '';
@@ -20,7 +21,9 @@ let repoKeys = [ "author", "username", "avatar", "forks", "language", "name", "u
 let trendingDevs = '';
 let trendyDevs = [];
 let devKeys = ["name", "description", "url", "avatar", "username", "repo"];
-
+let find = document.querySelector("#find");
+let search = document.querySelector("#search");
+let user = "TlonUqbar";
 
 let octiconsSet = { "WatchEvent" : ["octicon-star-16", "watching repo"], 
                     "PushEvent" : ["octicon-repo-push-16", "pushed to repo"], 
@@ -49,6 +52,9 @@ let devName = ["TlonUqbar","Chalarangelo", "arvinxx", "wsxiaoys", "tmc", "SoftFe
 
 
 function getRepos(dev){
+  userRaw = '';
+  userData = [];
+  userResults  = [];
   fetch(`https://api.github.com/users/${dev}/repos`, {method: "GET", mode: 'cors', headers: [
         ["Content-Type", "application/json"], ["Content-Type", "text/plain"]
       ] })
@@ -60,6 +66,8 @@ function getRepos(dev){
 }
 
 function getEvents(dev){
+  userEventsRaw = '';
+  userEventsResults = [];
   fetch(`https://api.github.com/users/${dev}/events?per_page=20`, {method: "GET", mode: 'cors', headers: [
     ["Content-Type", "application/json"], ["Content-Type", "text/plain"]
   ] })
@@ -103,6 +111,13 @@ const extract = (obj, ...keys) => {
 
 
 function createProjectContent(){
+  if( user === "TlonUqbar"){
+    t = `<div id='p' class='section-title'>Projects</div>` 
+  } else {
+    t = `<div id='p' class='section-title'>Projects for "${user}"</div>`
+  }
+  
+  projects.innerHTML = t; 
   userResults.forEach( (item) => {
     const box = document.createElement("div");
     const title = document.createElement("div");
@@ -139,12 +154,12 @@ function createProjectContent(){
     live_icon.setAttribute("data-icon", "mdi-web");
     repo.href = item.html_url;
     repo.setAttribute("target", "_blank");
-    repo.setAttribute('title', "Open Code Repo")
+    repo.setAttribute('title', "Repo")
     repo.append(repo_icon);
     if( item.homepage ){
       live.href = item.homepage;
       live.setAttribute("target", "_blank");
-      repo.setAttribute('title', "Open Homepage")
+      repo.setAttribute('title', "Homepage")
       live.append(live_icon);
     }
     star.classList = ["iconify"];
@@ -229,6 +244,15 @@ function getOcticon(type){
 }
 
 function createEventsFeed(){
+  
+  if( user === "TlonUqbar"){
+    t = `Activity` ;
+  } else {
+    t = `Activity for "${user}"`;
+  }
+  document.querySelector("#a").innerText = t;
+  
+  events.innerHTML  = '';
   userEventsResults.forEach( (item) => {
     const list = document.createElement("li");
     const icon = document.createElement("i");
@@ -316,6 +340,14 @@ function createDevsFeed(){
   });
 }
 
+
+function findUser(username){
+  username = ( search.value === '' ) ? devName[0] : search.value ;
+  user = username;
+  getRepos(username);
+  getEvents(username);
+}
+
 getRepos(devName[0]);
 getEvents(devName[0]);
 getTrendingRepos();
@@ -361,4 +393,11 @@ const toggleTheme = () => {
   }
 }
 
+
+
 dark.addEventListener( "click", toggleTheme);
+
+find.addEventListener( "click", (e) => {
+  console.log(search.value);
+  findUser(search.value);
+});

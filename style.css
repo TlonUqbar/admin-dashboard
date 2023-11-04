@@ -278,6 +278,10 @@ a:link, a:visited, a:active, a:hover{
   align-items: center;
 }
 
+#find{
+  cursor: pointer;
+}
+
 .search{
   display: grid;
   justify-self: stretch;
