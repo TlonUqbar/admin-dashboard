@@ -751,11 +751,11 @@ label > .iconify{
     justify-self: center;
     align-content: center;
     gap: 10px;
-    padding-right: 10px;
+    padding:0 10px;
   }
 
   .bottom .top-menu-buttons .button{
-    padding: 2px 10px;
+    padding: 2px 14px;
   }
 
   .news-container{
