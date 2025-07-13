@@ -51,6 +51,16 @@ let devName = ["TlonUqbar","Chalarangelo", "arvinxx", "wsxiaoys", "tmc", "SoftFe
     "guillaumekln", "zeux", "yairm210", "drwpow", "kripken", "TheOdinProject", "luismadrigal", "carafelix"]
 
 
+window.addEventListener("keydown", (e) => {
+  switch(e.code){
+    case "Enter" :
+    case "NumpadEnter" : findUser(search.value); break;
+    case "Escape" : search.value = ""; break;
+    default : break;
+  }
+});    
+
+
 function getRepos(dev){
   userRaw = '';
   userData = [];
